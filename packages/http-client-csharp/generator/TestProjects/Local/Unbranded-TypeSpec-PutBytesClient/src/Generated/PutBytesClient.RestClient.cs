@@ -23,6 +23,7 @@ public partial class PutBytesClient
         uri.Reset(_endpoint);
         uri.AppendPath("/upload", false);
         request.Uri = uri.ToUri();
+        request.Headers.Set("Content-Type", "application/octet-stream");
         request.Content = content;
         message.Apply(options);
         return message;
